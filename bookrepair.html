@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Repair - Rideau Phone Repairs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Rideau Phone Repairs</div>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="technicians.html">Technicians</a>
+      <a href="bookrepair.html" class="active">Book Repair</a>
+      <a href="payment.html">Payment</a>
+    </nav>
+  </header>
+
+  <main class="page form-page">
+    <h1 class="form-title">Repair Request Form:</h1>
+
+    <form id="repairForm">
+      <div class="form-row">
+        <label for="customerName">Name:</label>
+        <input type="text" id="customerName" required>
+      </div>
+
+      <div class="form-row">
+        <label for="customerEmail">Email:</label>
+        <input type="email" id="customerEmail" required>
+      </div>
+
+      <div class="form-row">
+        <label for="customerPhone">Phone Number:</label>
+        <input type="text" id="customerPhone" required>
+      </div>
+
+      <div class="form-row">
+        <label for="phoneBrand">Phone Brand:</label>
+        <input type="text" id="phoneBrand" required>
+      </div>
+
+      <div class="form-row">
+        <label for="phoneModel">Phone Model:</label>
+        <input type="text" id="phoneModel" required>
+      </div>
+
+      <div class="form-row">
+        <label>Repair Type:</label>
+        <span class="inline-value" id="selectedRepairType">Not selected</span>
+      </div>
+
+      <div class="form-row">
+        <label>Technician:</label>
+        <span class="inline-value" id="selectedTechnician">Not selected</span>
+      </div>
+
+      <div class="form-row">
+        <label for="dropOffDate">Drop-off Date:</label>
+        <input type="date" id="dropOffDate" required>
+      </div>
+
+      <div class="form-row">
+        <label for="issueDescription">(Optional) Describe Issue:</label>
+        <textarea id="issueDescription"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="primary-green">Submit</button>
+        <button type="button" class="primary-red" onclick="window.location.href='index.html'">Cancel</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="services.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
