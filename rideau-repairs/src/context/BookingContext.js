@@ -6,7 +6,7 @@ const BookingContext = createContext();
 export const useBooking = () => useContext(BookingContext);
 
 export const BookingProvider = ({ children }) => {
-    const [bookingData, setBookingData] = useSate(() => {
+    const [bookingData, setBookingData] = useState(() => {
         try {
             const stored = localStorage.getItem(STORAGE_KEY);
             return stored ? JSON.parse(stored) : {};
@@ -19,7 +19,7 @@ export const BookingProvider = ({ children }) => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(bookingData));
     }, [bookingData]);
 
-    const updateBooking = () => {
+    const updateBooking = (data) => {
         setBookingData(prev => ({ ...prev, ...data }));
     };
 
@@ -28,14 +28,14 @@ export const BookingProvider = ({ children }) => {
         localStorage.removeItem(STORAGE_KEY);
     };
 
-    const finServiceByKey = (key) => {
-        const { services } = require('../src/servicesData');
+    const findServiceByKey = (key) => {
+        const { services } = require('../data/servicesData');
         return services.find(service => service.key == key) ;
     };
 
-    const findTechnicianKey = (key) => {
-        const { technicans } = require('../src/servicesData');
-        return technicans.find(tech => tech.key == key);
+    const findTechnicianByKey = (key) => {
+        const { technicians } = require('../data/servicesData');
+        return technicians.find(tech => tech.key == key);
     };
 
     return (
@@ -43,8 +43,8 @@ export const BookingProvider = ({ children }) => {
             bookingData,
             updateBooking,
             clearBooking,
-            finServiceByKey,
-            findTechnicianKey
+            findServiceByKey,
+            findTechnicianByKey
         }}>
             {children}
         </BookingContext.Provider>

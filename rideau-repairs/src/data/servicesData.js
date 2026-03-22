@@ -1,5 +1,5 @@
 export const services = [
-    {
+  {
     key: "screenRepair",
     name: "Screen Repair",
     price: 100,
@@ -29,8 +29,8 @@ export const services = [
   }
 ];
 
-export const technicans = [
-     {
+export const technicians = [
+  {
     key: "michaelPhillips",
     name: "Michael Phillips",
     available: "Monday, Wednesday, Friday"
