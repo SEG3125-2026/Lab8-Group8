@@ -1,4 +1,4 @@
-const services = [
+export const services = [
   {
     key: "screenRepair",
     name: "Screen Repair",
@@ -29,7 +29,7 @@ const services = [
   }
 ];
 
-const technicians = [
+export const technicians = [
   {
     key: "michaelPhillips",
     name: "Michael Phillips",

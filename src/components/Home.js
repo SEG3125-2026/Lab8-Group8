@@ -33,7 +33,7 @@ function Home() {
         </div>
 
         <div className="preview-item" onClick={() => navigate('/services')}>
-          <img src="images/images-2.jpeg" alt="Charging Port Repair" />
+          <img src="images/12.jpeg" alt="Charging Port Repair" />
           <p>Charging Port Repair</p>
         </div>
 
