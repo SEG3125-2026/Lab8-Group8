@@ -62,16 +62,10 @@ function Home() {
           ))}
         </div>
 
-<<<<<<< HEAD:rideau-repairs/src/components/Home.js
         <div className="center-action">
           <button className="button-link" onClick={() => navigate('/services')}>
             {t.bookRepair}
           </button>
-=======
-        <div className="preview-item" onClick={() => navigate('/services')}>
-          <img src="images/12.jpeg" alt="Charging Port Repair" />
-          <p>Charging Port Repair</p>
->>>>>>> 1b6f41d13e7d49a4a2c21fd7ac49434b1e3a6427:src/components/Home.js
         </div>
       </section>
     </main>
