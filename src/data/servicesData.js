@@ -1,15 +1,10 @@
 export const services = [
   {
-<<<<<<< HEAD:rideau-repairs/src/data/servicesData.js
     key: 'screenRepair',
     name: {
       en: 'Screen Repair',
       fr: 'Réparation d’écran'
     },
-=======
-    key: "screenRepair",
-    name: "Screen Repair",
->>>>>>> 1b6f41d13e7d49a4a2c21fd7ac49434b1e3a6427:src/data/servicesData.js
     price: 100,
     time: {
       en: '1 hour',
@@ -37,16 +32,11 @@ export const services = [
       fr: 'Réparation du port de charge'
     },
     price: 90,
-<<<<<<< HEAD:rideau-repairs/src/data/servicesData.js
     time: {
       en: '1 hour',
       fr: '1 heure'
     },
     image: '/images/12.jpg'
-=======
-    time: "1 hour",
-    image: "images/12.jpeg"
->>>>>>> 1b6f41d13e7d49a4a2c21fd7ac49434b1e3a6427:src/data/servicesData.js
   },
   {
     key: 'waterDamageRepair',
@@ -65,18 +55,12 @@ export const services = [
 
 export const technicians = [
   {
-<<<<<<< HEAD:rideau-repairs/src/data/servicesData.js
     key: 'michaelPhillips',
     name: 'Michael Phillips',
     available: {
       en: 'Monday, Wednesday, Friday',
       fr: 'Lundi, mercredi, vendredi'
     }
-=======
-    key: "michaelPhillips",
-    name: "Michael Phillips",
-    available: "Monday, Wednesday, Friday"
->>>>>>> 1b6f41d13e7d49a4a2c21fd7ac49434b1e3a6427:src/data/servicesData.js
   },
   {
     key: 'rasheedWallace',
