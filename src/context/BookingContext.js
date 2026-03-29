@@ -9,39 +9,8 @@ const BookingContext = createContext();
 export const useBooking = () => useContext(BookingContext);
 
 export const BookingProvider = ({ children }) => {
-<<<<<<< HEAD:rideau-repairs/src/context/BookingContext.js
-  const [bookingData, setBookingData] = useState(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      return stored ? JSON.parse(stored) : {};
-    } catch (e) {
-      return {};
-    }
-  });
-=======
-    const [bookingData, setBookingData] = useState(() => {
-        try {
-            const stored = localStorage.getItem(STORAGE_KEY);
-            return stored ? JSON.parse(stored) : {};
-        } catch (e) {
-            return {};
-        }
-    });
->>>>>>> 1b6f41d13e7d49a4a2c21fd7ac49434b1e3a6427:src/context/BookingContext.js
+    const [bookingData, setBookingData] = useState({});
 
-  const [language, setLanguage] = useState(() => {
-    try {
-      return localStorage.getItem(LANGUAGE_KEY) || 'en';
-    } catch (e) {
-      return 'en';
-    }
-  });
-
-<<<<<<< HEAD:rideau-repairs/src/context/BookingContext.js
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(bookingData));
-  }, [bookingData]);
-=======
     const updateBooking = (data) => {
         setBookingData(prev => ({ ...prev, ...data }));
     };
@@ -56,10 +25,10 @@ export const BookingProvider = ({ children }) => {
     setBookingData((prev) => ({ ...prev, ...data }));
   }, []);
 
-  const clearBooking = () => {
-    setBookingData({});
-    localStorage.removeItem(STORAGE_KEY);
-  };
+    const clearBooking = () => {
+        setBookingData({});
+        localStorage.removeItem(STORAGE_KEY);
+    };
 
   const findServiceByKey = (key) => {
     return services.find((service) => service.key === key);
