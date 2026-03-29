@@ -1,54 +1,75 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useBooking } from '../context/BookingContext';
+import { services } from '../data/servicesData';
 
 function Home() {
-    const navigate = useNavigate();
-    return (
-        <main className="page">
-    <section className="home-top">
-      <div className="home-left">
-        <h1>Rideau Phone Repairs</h1>
-        <h2>Fast and Reliable Phone Repair Services</h2>
-      </div>
+  const navigate = useNavigate();
+  const { language, updateBooking } = useBooking();
 
-      <div className="home-right">
-        <h2>Business Hours:</h2>
-        <p>Monday - Friday: 9 am - 5 pm</p>
-        <p>Saturday: 10 am - 6 pm</p>
-      </div>
-    </section>
+  const text = {
+    en: {
+      title: 'Rideau Phone Repairs',
+      subtitle: 'Fast and Reliable Phone Repair Services',
+      businessHours: 'Business Hours:',
+      weekdayHours: 'Monday - Friday: 9 am - 5 pm',
+      saturdayHours: 'Saturday: 10 am - 6 pm',
+      ourServices: 'Our Services:',
+      bookRepair: 'Book a Repair'
+    },
+    fr: {
+      title: 'Rideau Phone Repairs',
+      subtitle: 'Services de réparation de téléphones rapides et fiables',
+      businessHours: 'Heures d’ouverture :',
+      weekdayHours: 'Lundi au vendredi : 9 h à 17 h',
+      saturdayHours: 'Samedi : 10 h à 18 h',
+      ourServices: 'Nos services :',
+      bookRepair: 'Prendre un rendez vous'
+    }
+  };
 
-    <section className="services-preview">
-      <h2 className="section-title">Our Services:</h2>
+  const t = text[language];
 
-      <div className="services-preview-grid">
-        <div className="preview-item" onClick={() => navigate('/services')}>
-          <img src="images/images.jpeg" alt="Screen Repair" />
-          <p>Screen Repair</p>
+  const handleServiceClick = (serviceKey) => {
+    updateBooking({ serviceKey });
+    navigate(`/services?service=${serviceKey}`);
+  };
+
+  return (
+    <main className="page">
+      <section className="home-top">
+        <div className="home-left">
+          <h1>{t.title}</h1>
+          <h2>{t.subtitle}</h2>
         </div>
 
-        <div className="preview-item" onClick={() => navigate('/services')}>
-          <img src="images/v4-460px-Fix-a-Bike-Tire-Step-2.jpg" alt="Battery Replacement" />
-          <p>Battery Replacement</p>
+        <div className="home-right">
+          <h2>{t.businessHours}</h2>
+          <p>{t.weekdayHours}</p>
+          <p>{t.saturdayHours}</p>
+        </div>
+      </section>
+
+      <section className="services-preview">
+        <h2 className="section-title">{t.ourServices}</h2>
+
+        <div className="services-preview-grid">
+          {services.map((service) => (
+            <div key={service.key} className="preview-item" onClick={() => handleServiceClick(service.key)}>
+              <img src={service.image} alt={service.name[language]} />
+              <p>{service.name[language]}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="preview-item" onClick={() => navigate('/services')}>
-          <img src="images/images-2.jpeg" alt="Charging Port Repair" />
-          <p>Charging Port Repair</p>
+        <div className="center-action">
+          <button className="button-link" onClick={() => navigate('/services')}>
+            {t.bookRepair}
+          </button>
         </div>
-
-        <div className="preview-item" onClick={() => navigate('/services')}>
-          <img src="images/water-damage-repair.jpg" alt="Water Damage Repair" />
-          <p>Water Damage Repair</p>
-        </div>
-      </div>
-
-      <div className="center-action">
-        <button className="button-link" onClick={() => navigate('/services')}> 
-        Book a Repair</button>
-      </div>
-    </section>
-  </main>
-    );
+      </section>
+    </main>
+  );
 }
-export default Home
+
+export default Home;

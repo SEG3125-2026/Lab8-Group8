@@ -18,7 +18,7 @@ const services = [
     name: "Charging Port Repair",
     price: 90,
     time: "1 hour",
-    image: "images/12.jpeg"
+    image: "images/12.jpg"
   },
   {
     key: "waterDamageRepair",

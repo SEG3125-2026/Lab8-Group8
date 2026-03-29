@@ -274,3 +274,13 @@ button,
     flex-wrap: wrap;
   }
 }
+
+.lang-toggle-btn {
+  margin-left: 16px;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #6fa0df;
+  color: #6a1fd1;
+}
