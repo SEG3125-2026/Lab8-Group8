@@ -36,7 +36,15 @@ export const services = [
       en: '1 hour',
       fr: '1 heure'
     },
+<<<<<<< HEAD
+    image: '/images/12.jpeg'
+=======
+    time: "1 hour",
+    image: "images/12.jpeg"
+>>>>>>> 1b6f41d13e7d49a4a2c21fd7ac49434b1e3a6427:src/data/servicesData.js
+=======
     image: '/images/12.jpg'
+>>>>>>> ae74bfb7d2d1966a5a726d13bdd598b6e891c4ae
   },
   {
     key: 'waterDamageRepair',
