@@ -59,11 +59,39 @@ function BookRepair() {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
     e.preventDefault();
+
     updateBooking(formData);
-    navigate('/payment');
-  };
+
+    const payload = {
+        ...formData,
+        repairType: selectedService?.name[language] || null,
+        technician: selectedTech?.name || null,
+        basePrice: selectedService?.price || 0,
+        totalPrice: selectedService?.price || 0
+    };
+
+    console.log("Sending data:", payload);
+
+    try {
+        const response = await fetch('http://localhost:4000/bookings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        const data = await response.json();
+        console.log("Saved ID:", data.id);
+
+        navigate('/payment');
+    } catch (error) {
+        console.error(error);
+        alert('Failed to save booking');
+    }
+};
 
   const handleCancel = () => {
     navigate('/');

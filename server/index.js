@@ -39,6 +39,7 @@ db.run(`CREATE TABLE IF NOT EXISTS bookings (
 
 // save the booking
 app.post('/bookings', (req, res) => {
+    console.log("POST /bookings received:", req.body);
     const b = req.body;
     db.run(`INSERT INTO bookings (
         customer_name, customer_email, customer_phone, phone_brand,

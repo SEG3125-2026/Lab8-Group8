@@ -38,10 +38,10 @@ export const BookingProvider = ({ children }) => {
     setBookingData((prev) => ({ ...prev, ...data }));
   }, []);
 
-  const clearBooking = () => {
-    setBookingData({});
-    localStorage.removeItem(STORAGE_KEY);
-  };
+    const clearBooking = () => {
+        setBookingData({});
+        localStorage.removeItem(STORAGE_KEY);
+    };
 
   const findServiceByKey = (key) => {
     return services.find((service) => service.key === key);
