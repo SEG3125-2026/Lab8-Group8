@@ -42,7 +42,7 @@ export const services = [
       en: '1 hour',
       fr: '1 heure'
     },
-    image: '/images/12.jpg'
+    image: '/images/12.jpeg'
 =======
     time: "1 hour",
     image: "images/12.jpeg"
